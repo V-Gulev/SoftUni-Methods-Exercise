@@ -4,21 +4,25 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double grade = Double.parseDouble(scanner.nextLine());
-        SignOfTheNumber(grade);
+        int end = Integer.parseInt(scanner.nextLine());
+
+        PrintTriangle(end);
+
     }
 
-    public static void SignOfTheNumber(double grade) {
-        if (grade>=2.00 && grade<3){
-            System.out.println("Fail");
-        } else if (grade>=3.00 && grade<3.50) {
-            System.out.println("Poor");
-        }else if (grade>=3.50 && grade<4.50) {
-            System.out.println("Good");
-        }else if (grade>=4.50 && grade<5.50) {
-            System.out.println("Very good");
-        }else if (grade>=5.50 && grade<=6) {
-            System.out.println("Excellent");
+    public static void PrintTriangle(int end) {
+        for (int i = 0; i < end; i++) {
+            for (int j = 1; j < i + 2; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
+        for (int i = end - 1; i > 0; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
         }
     }
 }
