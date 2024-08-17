@@ -4,32 +4,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int input = Integer.parseInt(scanner.nextLine());
-        int number = Math.abs(input);
-        int[] array = SplittingNumber(number);
-        PrintMultipliedDifference(array);
+        int num1 = Integer.parseInt(scanner.nextLine());
+        String operator = scanner.nextLine();
+        int num2 = Integer.parseInt(scanner.nextLine());
+        System.out.println(Calculator(num1,operator,num2));
     }
 
-    public static int[] SplittingNumber(int number) {
-        String numberString = Integer.toString(number);
-        int[] digits = new int[numberString.length()];
-        for (int i = 0; i < numberString.length(); i++) {
-            digits[i] = Character.getNumericValue(numberString.charAt(i));
-        }
-        return digits;
-    }
+    public static int Calculator(int num1,String operator,int num2) {
 
-    public static void PrintMultipliedDifference(int[] array) {
-        int evenSum = 0;
-        int oddSum = 0;
-
-        for (int j : array) {
-            if (j % 2 == 0) {
-                evenSum += j;
-            } else oddSum += j;
-        }
-
-        System.out.println(evenSum*oddSum);
+        return switch (operator) {
+            case "/" -> num1 / num2;
+            case "*" -> num1 * num2;
+            case "+" -> num1 + num2;
+            case "-" -> num1 - num2;
+            default -> 0;
+        };
     }
 
 }
