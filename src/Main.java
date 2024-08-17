@@ -4,21 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int num1 = Integer.parseInt(scanner.nextLine());
-        int num2 = Integer.parseInt(scanner.nextLine());
-        int num3 = Integer.parseInt(scanner.nextLine());
-        PrintSmallestNumber(num1, num2, num3);
+        String input = scanner.nextLine();
+        PrintVowelsCount(input);
     }
 
-    public static void PrintSmallestNumber(int num1, int num2, int num3) {
-        int smallestNumber = num1;
-        if (smallestNumber > num2) {
-            smallestNumber = num2;
+    public static void PrintVowelsCount(String input) {
+        String lowercaseInput = input.toLowerCase();
+        int vowelCounter =0;
+        for (int i = 0; i < lowercaseInput.length(); i++) {
+            String letter = String.valueOf(lowercaseInput.charAt(i));
+            if (letter.equals("a") || letter.equals("o") || letter.equals("u") || letter.equals("i") || letter.equals("e")){
+                vowelCounter++;
+            }
         }
-        if (smallestNumber > num3) {
-            smallestNumber = num3;
-        }
-        System.out.println(smallestNumber);
+        System.out.println(vowelCounter);
     }
 
 }
