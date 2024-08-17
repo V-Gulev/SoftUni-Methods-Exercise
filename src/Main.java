@@ -4,40 +4,33 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String action = scanner.nextLine();
-        int a = Integer.parseInt(scanner.nextLine());
-        int b = Integer.parseInt(scanner.nextLine());
+        String product = scanner.nextLine();
+        int amount = Integer.parseInt(scanner.nextLine());
 
-        switch (action) {
-            case "add":
-                AddNumbers(a, b);
+        PriceCalculator(product,amount);
+
+    }
+
+    public static void PriceCalculator(String product, int amount) {
+        double total;
+        switch (product){
+            case "water":
+                total=amount*1.00;
+                System.out.printf("%.2f",total);
                 break;
-            case "divide":
-                DivideNumbers(a,b);
+            case "coffee":
+                total=amount*1.50;
+                System.out.printf("%.2f",total);
                 break;
-            case "subtract":
-                SubtractNumbers(a,b);
+            case "coke":
+                total=amount*1.40;
+                System.out.printf("%.2f",total);
                 break;
-            case "multiply":
-                MultiplyNumbers(a,b);
+            case "snacks":
+                total=amount*2.00;
+                System.out.printf("%.2f",total);
                 break;
         }
-
     }
 
-    public static void AddNumbers(int a, int b) {
-        System.out.println(a + b);
-    }
-
-    public static void DivideNumbers(int a, int b) {
-        System.out.println(a / b);
-    }
-
-    public static void SubtractNumbers(int a, int b) {
-        System.out.println(a - b);
-    }
-
-    public static void MultiplyNumbers(int a, int b) {
-        System.out.println(a * b);
-    }
 }
