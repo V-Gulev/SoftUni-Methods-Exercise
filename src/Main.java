@@ -4,20 +4,22 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        PrintVowelsCount(input);
+        String char1 = scanner.next();
+        String char2 = scanner.next();
+        PrintCharactersInRange(char1, char2);
     }
 
-    public static void PrintVowelsCount(String input) {
-        String lowercaseInput = input.toLowerCase();
-        int vowelCounter =0;
-        for (int i = 0; i < lowercaseInput.length(); i++) {
-            String letter = String.valueOf(lowercaseInput.charAt(i));
-            if (letter.equals("a") || letter.equals("o") || letter.equals("u") || letter.equals("i") || letter.equals("e")){
-                vowelCounter++;
-            }
+    public static void PrintCharactersInRange(String char1, String char2) {
+        char start = char1.charAt(0);
+        char end = char2.charAt(0);
+        if ((int) start > (int) end){
+            char temp = start;
+            start=end;
+            end=temp;
         }
-        System.out.println(vowelCounter);
+        for (int i = (int) start + 1; i < (int) end ; i++) {
+            System.out.print((char) i + " ");
+        }
     }
 
 }
