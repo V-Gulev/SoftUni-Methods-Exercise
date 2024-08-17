@@ -4,16 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String text = scanner.nextLine();
-        int times = Integer.parseInt(scanner.nextLine());
+        int number = Integer.parseInt(scanner.nextLine());
+        int power = Integer.parseInt(scanner.nextLine());
 
-        PrintText(text,times);
+        System.out.printf("%.0f",mathPower(number,power));
+
     }
 
-    public static void PrintText(String text, int times) {
-        for (int i = 0; i < times; i++) {
-            System.out.print(text);
+    public static double mathPower(int number, int power) {
+        double result = 1;
+        if (power>1){
+            result= Math.pow(number,power);
         }
+        return result;
     }
 
 }
