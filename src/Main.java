@@ -4,25 +4,40 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int end = Integer.parseInt(scanner.nextLine());
+        String action = scanner.nextLine();
+        int a = Integer.parseInt(scanner.nextLine());
+        int b = Integer.parseInt(scanner.nextLine());
 
-        PrintTriangle(end);
+        switch (action) {
+            case "add":
+                AddNumbers(a, b);
+                break;
+            case "divide":
+                DivideNumbers(a,b);
+                break;
+            case "subtract":
+                SubtractNumbers(a,b);
+                break;
+            case "multiply":
+                MultiplyNumbers(a,b);
+                break;
+        }
 
     }
 
-    public static void PrintTriangle(int end) {
-        for (int i = 0; i < end; i++) {
-            for (int j = 1; j < i + 2; j++) {
-                System.out.print(j + " ");
-            }
-            System.out.println();
-        }
+    public static void AddNumbers(int a, int b) {
+        System.out.println(a + b);
+    }
 
-        for (int i = end - 1; i > 0; i--) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(j + " ");
-            }
-            System.out.println();
-        }
+    public static void DivideNumbers(int a, int b) {
+        System.out.println(a / b);
+    }
+
+    public static void SubtractNumbers(int a, int b) {
+        System.out.println(a - b);
+    }
+
+    public static void MultiplyNumbers(int a, int b) {
+        System.out.println(a * b);
     }
 }
