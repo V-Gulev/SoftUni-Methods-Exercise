@@ -4,14 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int height = Integer.parseInt(scanner.nextLine());
-        int width = Integer.parseInt(scanner.nextLine());
+        String text = scanner.nextLine();
+        int times = Integer.parseInt(scanner.nextLine());
 
-        CalculateRectangleArea(height,width);
+        PrintText(text,times);
     }
 
-    public static void CalculateRectangleArea(int height, int width) {
-        System.out.println(height*width);
+    public static void PrintText(String text, int times) {
+        for (int i = 0; i < times; i++) {
+            System.out.print(text);
+        }
     }
 
 }
