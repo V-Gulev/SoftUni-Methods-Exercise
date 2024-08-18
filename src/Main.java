@@ -4,22 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String dataType = scanner.nextLine();
-        switch (dataType) {
-            case "int":
-                int int1 = Integer.parseInt(scanner.nextLine());
-                System.out.println(int1 * 2);
-                break;
-            case "real":
-                double double1 = Double.parseDouble(scanner.nextLine()) * 1.50;
-                System.out.printf("%.2f", double1);
-                break;
-            case "string":
-                String input = scanner.nextLine();
-                System.out.println('$' + input + '$');
-                break;
+        int y1 = Integer.parseInt(scanner.nextLine());
+        int x1 = Integer.parseInt(scanner.nextLine());
+        int y2 = Integer.parseInt(scanner.nextLine());
+        int x2 = Integer.parseInt(scanner.nextLine());
+        PrintTheClosestPoint(y1, x1, y2, x2);
+    }
 
-        }
+    public static void PrintTheClosestPoint(int y1, int x1, int y2, int x2) {
+        int sum1 = Math.abs(y1 + x1);
+        int sum2 = Math.abs(y2 + x2);
+        if (sum1 < sum2) {
+            System.out.printf("(%d, %d)", y1, x1);
+        } else System.out.printf("(%d, %d)", y2, x2);
     }
 }
 
