@@ -4,15 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        PrintMiddleChar(input);
+        int num = Integer.parseInt(scanner.nextLine());
+        PrintNxM(num);
     }
 
-    public static void PrintMiddleChar(String input) {
-        if (input.length() % 2 == 0){
-            System.out.print(input.charAt(input.length()/2-1));
-            System.out.print(input.charAt(input.length()/2));
-        }else System.out.println(input.charAt((int) Math.floor(input.length()/2)));
+    public static void PrintNxM(int num) {
+        for (int i = 0; i < num; i++) {
+            for (int j = 1; j <= num; j++) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
     }
 
 
