@@ -4,18 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int num1 = Integer.parseInt(scanner.nextLine());
-        int num2 = Integer.parseInt(scanner.nextLine());
-        int num3 = Integer.parseInt(scanner.nextLine());
-        System.out.println(SubtractTheThirdNumber(SumOfTheFirstTwoInts(num1,num2),num3));
+        String input = scanner.nextLine();
+        PrintMiddleChar(input);
     }
 
-    public static int SumOfTheFirstTwoInts(int num1, int num2) {
-        return num1 + num2;
-    }
-
-    public static int SubtractTheThirdNumber(int result, int num3) {
-        return result - num3;
+    public static void PrintMiddleChar(String input) {
+        if (input.length() % 2 == 0){
+            System.out.print(input.charAt(input.length()/2-1));
+            System.out.print(input.charAt(input.length()/2));
+        }else System.out.println(input.charAt((int) Math.floor(input.length()/2)));
     }
 
 
