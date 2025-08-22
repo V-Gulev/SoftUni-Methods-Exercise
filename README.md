@@ -1,1 +1,1 @@
-Methods Exercise
+SoftUni Methods Exercise
